@@ -14,8 +14,8 @@ endpoints:
 
 zuul:
   routes:
-    accounts: /accounts/**
-    transactions: /transactions/**
+    accounts-api-service: /accounts/**
+    transactions-api-service: /transactions/**
 
 eureka:
   client:
