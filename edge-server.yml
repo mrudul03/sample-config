@@ -1,0 +1,23 @@
+info:
+  component: Zuul Server
+
+server:
+  port: 8765
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  routes:
+    accounts: /accounts/**
+    transactions: /transactions/**
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
