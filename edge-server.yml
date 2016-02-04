@@ -17,6 +17,11 @@ zuul:
     accounts: /accounts/**
     transactions: /transactions/**
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    
 logging:
   level:
     ROOT: INFO
