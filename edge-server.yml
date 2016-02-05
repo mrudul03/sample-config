@@ -13,11 +13,11 @@ endpoints:
     sensitive: false
 
 zuul:
+  prefix: /api
   routes:
     transactions-api-service: /accounts/*/transactions/*
-    stripPrefix: false
     accounts-api-service: /accountdetails/*
-    stripPrefix: false
+    
 
 eureka:
   client:
