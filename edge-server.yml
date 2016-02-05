@@ -13,11 +13,12 @@ endpoints:
     sensitive: false
 
 zuul:
+  ignoredServices: "*"
   prefix: /api
   routes:
-    transactions-api-service: /accounts/*/transactions/*
-    accounts-api-service: /accountdetails/*
-    
+    transactions-api-service: 
+    path: /accounts/*/transactions/*
+    serviceId: transactions-api-service
 
 eureka:
   client:
