@@ -14,10 +14,9 @@ endpoints:
 
 zuul:
   ignoredServices: "*"
-  prefix: /api
   routes:
     transactions-api-service: 
-    path: /accounts/**
+    path: transactions/accounts/**
     serviceId: transactions-api-service
 
 eureka:
