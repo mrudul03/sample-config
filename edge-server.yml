@@ -17,7 +17,7 @@ zuul:
   prefix: /api
   routes:
     transactions-api-service: 
-    path: /accounts/*/transactions/*
+    path: /accounts/**
     serviceId: transactions-api-service
 
 eureka:
