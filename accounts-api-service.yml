@@ -20,12 +20,3 @@ logging:
     org.springframework.boot: 'TRACE'
     org.springframework.context: 'TRACE'
     org.springframework.integration: 'TRACE'
-
-      
-logging:
-  level: 
-    com.netflix.discovery: 'TRACE'
-    org.springframework.cloud: 'TRACE'
-    org.springframework.boot: 'TRACE'
-    org.springframework.context: 'TRACE'
-    org.springframework.integration: 'TRACE'
