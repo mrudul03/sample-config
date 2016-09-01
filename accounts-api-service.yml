@@ -1,22 +1,3 @@
-spring:
-  application:
-    name: accounts-api-service
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8888           
-
-info:
-  component: Accounts API Service
-  
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
 server:
   port: 8082
 
