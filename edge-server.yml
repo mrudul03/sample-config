@@ -1,9 +1,14 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888           
+
 info:
-  component: Zuul Server
-
-server:
-  port: 8765
-
+  component: API Gateway
+  
 endpoints:
   restart:
     enabled: true
@@ -12,19 +17,34 @@ endpoints:
   health:
     sensitive: false
 
-zuul:
-  ignoredServices: "*"
-  routes:
-    transactions-api-service: 
-    path: transactions/accounts/**
-    serviceId: transactions-api-service
+server:
+  port: 8785
+
+management:
+  port: 8993
 
 eureka:
   client:
+    registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+      
 logging:
-  level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
+  level: 
+    com.netflix.discovery: 'TRACE'
+    org.springframework.cloud: 'TRACE'
+    org.springframework.boot: 'TRACE'
+    org.springframework.context: 'TRACE'
+    org.springframework.integration: 'TRACE'
+    
+zuul:
+  ignoredServices: "*"
+  routes:
+    transactions-api-service: /account-transactions/**
+    accounts-api-service: /**
