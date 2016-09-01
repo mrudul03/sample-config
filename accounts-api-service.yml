@@ -4,5 +4,12 @@ server:
 eureka:
   client:
     serviceUrl:
+      registerWithEureka: true
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
       
