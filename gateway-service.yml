@@ -27,5 +27,5 @@ logging:
 zuul:
   ignoredServices: "*"
   routes:
-    transactions-api-service: /account-transactions/**
+    transactions-api-service: /account/~/transactions/**
     accounts-api-service: /**
