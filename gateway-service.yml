@@ -28,4 +28,4 @@ zuul:
   ignoredServices: "*"
   routes:
     transactions-api-service: /accounts/*/transactions/**
-    accounts-api-service: /**
+    accounts-api-service: /accountdetails/**
